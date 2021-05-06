@@ -35,6 +35,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        // why do you define Constance already and not used in this? what's the source of truth for the constants ?
+        
         if(Auth::check() && Auth::user()->role_id == 1){ 
             $this->redirectTo = route('admin.dashboard');
         } elseif(Auth::check() && Auth::user()->role_id == 2){
@@ -44,5 +46,6 @@ class LoginController extends Controller
         }
        
         $this->middleware('guest')->except('logout');
+       
     }
 }

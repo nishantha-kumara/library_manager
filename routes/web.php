@@ -38,4 +38,5 @@ Route::group(['as'=>'author.','prefix' => 'author','namespace'=>'Author','middle
 
 Auth::routes();
 
-
+//Use resource routes like
+// Route::resource('user', 'User\UserController'); -> this will handle index/create/store/update/delete
